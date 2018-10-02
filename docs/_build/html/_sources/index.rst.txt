@@ -6,15 +6,12 @@
 Welcome to questions-clustering's documentation!
 ================================================
 
+**questions-clustering** is an open-source project by Anyhelper. The goal of the project is to explore and make **predictive analysis** on the proprietary big-size database of Anyhelper built over the years.
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+   resources
+   kaggle/index
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

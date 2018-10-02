@@ -3,15 +3,15 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to questions-clustering's documentation!
+Kaggle 
 ================================================
-
-**questions-clustering** is an open-source project by Anyhelper. The goal of the project is to explore and make **predictive analysis** on the proprietary big-size database of Anyhelper built over the years.
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   resources
-   kaggle/index
+   datasets/Python_Questions_from_Stack_Overflow.rst
+   datasets/Quora_Questions.rst
 
+
+We are using dataset on Kaggle that are similar to our dataset to explore similar solution adopted inside open-sourced kernels. You can checkout the DATSET page for more information or checkout the kernels we forked
