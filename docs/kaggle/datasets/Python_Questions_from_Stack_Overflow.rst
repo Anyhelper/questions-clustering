@@ -29,12 +29,13 @@ The dataset contains questions all questions asked between August 2, 2008 and Oc
 
 Kernel: LSA analysis for questions clustering
 ====================================================
-This kernel uses the Latent Semantic Analysis to find clusters of questions. You can find a commented version at the (https://github.com/Anyhelper/questions-clustering/blob/master/Kaggle/datasets/Python_Questions_from_Stack_Overflow/clustersLSA.ipynb)[repo link], in the comments there are also resources to get familiar with concepts like LSA and tf-idf that will thus not be explained in detail here. 
+This kernel uses the Latent Semantic Analysis to find clusters of questions. You can find a commented version at the [https://github.com/Anyhelper/questions-clustering/blob/master/Kaggle/datasets/Python_Questions_from_Stack_Overflow/clustersLSA.ipynb](repo link), in the comments there are also resources to get familiar with concepts like LSA and tf-idf that will thus not be explained in detail here. 
 
 ====
 Kernel Overview
 ====
 This is the step implemented in the kernels:
+
 1. **Data Cleaning (I): re**
       First of all the data is cleaned using regular expressions, and combining title and body together
 2. **Data Cleaning (II): Stemming and Lemmatizing**
@@ -48,6 +49,4 @@ This is the step implemented in the kernels:
 6. **Cluster computation: scipy.cluster**
       Now that we computed our metric we can use hierarchical clustering to compute the clusters, hierarchy.linkage from scipy
 
-And that's how you go from the raw question data to your final clusters. You can check-out the kernels on kaggle to see the output at (kaggle.com)[the kernel fork page]
-
-
+And that's how you go from the raw question data to your final clusters. You can check-out the kernels on kaggle to see the output at [kaggle.com](the kernel fork page)
