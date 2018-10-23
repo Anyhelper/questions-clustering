@@ -29,7 +29,7 @@ The dataset contains questions all questions asked between August 2, 2008 and Oc
 
 Kernel: LSA analysis for questions clustering
 ====================================================
-This kernel uses the Latent Semantic Analysis to find clusters of questions. You can find a commented version at the [https://github.com/Anyhelper/questions-clustering/blob/master/Kaggle/datasets/Python_Questions_from_Stack_Overflow/clustersLSA.ipynb](repo link), in the comments there are also resources to get familiar with concepts like LSA and tf-idf that will thus not be explained in detail here. 
+This kernel uses the Latent Semantic Analysis to find clusters of questions. You can find a commented version at the `github repo <https://www.kaggle.com/alessandrosolbiati/identifying-clusters-of-related-questions-088d3f>`_ or `Kaggle repo <https://www.kaggle.com/alessandrosolbiati/identifying-clusters-of-related-questions-088d3f>`_, in the comments there are also resources to get familiar with concepts like LSA and tf-idf that will thus not be explained in detail here. 
 
 ====
 Kernel Overview
