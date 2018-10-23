@@ -85,6 +85,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#dataset">Dataset</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#kernel-lsa-analysis-for-questions-clustering">Kernel: LSA analysis for questions clustering</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#kernel-overview">Kernel Overview</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -162,6 +166,47 @@
 <h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
 <p>Full text of all <strong>questions and answers from Stack Overflow</strong> that are tagged with the python tag. Useful for natural language processing and community analysis. See also the dataset of R questions.</p>
 <p>The dataset contains questions all questions asked between August 2, 2008 and Ocotober 19, 2016.</p>
+</div>
+</div>
+<div class="section" id="kernel-lsa-analysis-for-questions-clustering">
+<h1>Kernel: LSA analysis for questions clustering<a class="headerlink" href="#kernel-lsa-analysis-for-questions-clustering" title="Permalink to this headline">¶</a></h1>
+<p>This kernel uses the Latent Semantic Analysis to find clusters of questions. You can find a commented version at the <a class="reference external" href="https://www.kaggle.com/alessandrosolbiati/identifying-clusters-of-related-questions-088d3f">github repo</a> or <a class="reference external" href="https://www.kaggle.com/alessandrosolbiati/identifying-clusters-of-related-questions-088d3f">Kaggle repo</a>, in the comments there are also resources to get familiar with concepts like LSA and tf-idf that will thus not be explained in detail here.</p>
+<div class="section" id="kernel-overview">
+<h2>Kernel Overview<a class="headerlink" href="#kernel-overview" title="Permalink to this headline">¶</a></h2>
+<p>This is the step implemented in the kernels:</p>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt><strong>Data Cleaning (I): re</strong></dt>
+<dd>First of all the data is cleaned using regular expressions, and combining title and body together</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Data Cleaning (II): Stemming and Lemmatizing</strong></dt>
+<dd>A second step in data cleaning is Stemming and Lemmatizing, that is trying to reduce inflectional forms and derivations from common base form. This is applied to tokens of the single sentences. This is implemented with an external library WordNetLemmatizer</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Frequency vectors computation: TFIDF</strong></dt>
+<dd>The tf-idf is a statistic used to evalute the importance of a single word inside the document, it is computed using TfidVectorizer that will return the vectors. A vector represents the ‘importance’ of a single word.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Dimensionality Reduction: SVD</strong></dt>
+<dd>A dimensionality reduction is executed on the tfidf vector to get rid of redundant data, implemented with TruncatedSVD.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Metric computation: cosine similarity</strong></dt>
+<dd>This is the most common use text-similarity metrix, is computed on the whole vector dataframe using distance.pdist</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Cluster computation: scipy.cluster</strong></dt>
+<dd>Now that we computed our metric we can use hierarchical clustering to compute the clusters, hierarchy.linkage from scipy</dd>
+</dl>
+</li>
+</ol>
+<p>And that’s how you go from the raw question data to your final clusters. You can check-out the kernels on kaggle to see the output at [kaggle.com](the kernel fork page)</p>
 </div>
 </div>
 

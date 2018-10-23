@@ -14,4 +14,5 @@ Welcome to questions-clustering's documentation!
 
    resources
    kaggle/index
+   kernels/index
 
